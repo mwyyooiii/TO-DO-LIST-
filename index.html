@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TaskFlow — To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top-header">
+      <h1>TaskFlow</h1>
+      <p class="subtitle">Smart To-Do List with reminders & local storage</p>
+    </header>
+
+    <!-- Search + Sort Row -->
+    <div class="row-controls">
+      <input id="searchInput" type="text" placeholder="Search tasks..." />
+      <select id="sortSelect">
+        <option value="newest">Newest first</option>
+        <option value="oldest">Oldest first</option>
+        <option value="date">By due date</option>
+      </select>
+    </div>
+
+    <!-- Counters -->
+    <div class="counter">
+      <span id="countTotal">0</span> total •
+      <span id="countPending">0</span> pending •
+      <span id="countDone">0</span> completed
+    </div>
+
+    <!-- Form -->
+    <form id="taskForm">
+      <input id="titleInput" type="text" placeholder="Task title" required />
+
+      <div class="row">
+        <div>
+          <label>Due date</label>
+          <input id="dateInput" type="date">
+        </div>
+        <div>
+          <label>Time</label>
+          <input id="timeInput" type="time">
+        </div>
+      </div>
+
+      <label>Reminder</label>
+      <select id="reminderSelect">
+        <option value="none">No reminder</option>
+        <option value="0">At due time</option>
+        <option value="5">5 minutes before</option>
+        <option value="15">15 minutes before</option>
+        <option value="60">1 hour before</option>
+        <option value="1440">1 day before</option>
+      </select>
+
+      <button type="submit" class="btn-primary">Add Task</button>
+    </form>
+
+    <h2 class="section-title">Tasks</h2>
+
+    <div id="tasksContainer" class="tasks"></div>
+    <div id="noTasks" class="no-tasks">No tasks yet — add one!</div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
